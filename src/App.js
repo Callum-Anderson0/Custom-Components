@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 
@@ -35,7 +36,7 @@ const App = () => {
   // Fetch the default text file and create posts on initial load
   useEffect(() => {
     const loadDefaultText = async () => {
-      const response = await fetch("/defaultText.txt"); // Adjust path if necessary
+      const response = await fetch(process.env.PUBLIC_URL + "/defaultText.txt");
       const text = await response.text();
       // Split text into posts based on sentence length
       const newPosts = splitTextIntoPosts(text);
