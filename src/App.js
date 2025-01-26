@@ -32,6 +32,8 @@ const App = () => {
   const [posts, setPosts] = useState([]); // State for posts
   const [jumpIndex, setJumpIndex] = useState(""); // State for jump input
   const isScrolling = useRef(false);
+  const touchStartY = useRef(0);
+  const touchEndY = useRef(0);
 
   // Fetch the default text file and create posts on initial load
   useEffect(() => {
@@ -50,11 +52,10 @@ const App = () => {
     loadDefaultText();
   }, []);
 
-  const handleScroll = (e) => {
+  const handleScroll = (direction) => {
     if (isScrolling.current) return;
     isScrolling.current = true;
 
-    const direction = e.deltaY > 0 ? 1 : -1;
     const nextIndex = Math.min(
       Math.max(currentIndex + direction, 0),
       posts.length - 1
@@ -67,6 +68,27 @@ const App = () => {
     setTimeout(() => {
       isScrolling.current = false;
     }, 500);
+  };
+
+  const handleTouchStart = (e) => {
+    touchStartY.current = e.touches[0].clientY;
+  };
+
+  const handleTouchEnd = (e) => {
+    touchEndY.current = e.changedTouches[0].clientY;
+
+    const touchDifference = touchStartY.current - touchEndY.current;
+
+    if (Math.abs(touchDifference) > 50) {
+      // Swipe up
+      if (touchDifference > 0) {
+        handleScroll(1); // Next post
+      }
+      // Swipe down
+      else {
+        handleScroll(-1); // Previous post
+      }
+    }
   };
 
   const handleTextChange = (e) => {
@@ -97,7 +119,11 @@ const App = () => {
 
   return (
     <Router basename={process.env.PUBLIC_URL}>
-      <div className="h-screen w-screen overflow-hidden" onWheel={handleScroll}>
+      <div
+        className="h-screen w-screen overflow-hidden"
+        onTouchStart={handleTouchStart}
+        onTouchEnd={handleTouchEnd}
+      >
         <div className="relative h-full">
           {posts.map((post, index) => {
             const validPosts = posts.filter(post => post.content.trim() !== "");
