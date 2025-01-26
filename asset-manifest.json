@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/Callum-Anderson0/Custom-Components/static/css/main.582a640d.css",
-    "main.js": "/Callum-Anderson0/Custom-Components/static/js/main.3b1810bb.js",
-    "index.html": "/Callum-Anderson0/Custom-Components/index.html",
-    "main.582a640d.css.map": "/Callum-Anderson0/Custom-Components/static/css/main.582a640d.css.map",
-    "main.3b1810bb.js.map": "/Callum-Anderson0/Custom-Components/static/js/main.3b1810bb.js.map"
+    "main.css": "/Custom-Components/static/css/main.582a640d.css",
+    "main.js": "/Custom-Components/static/js/main.9b7b81e0.js",
+    "index.html": "/Custom-Components/index.html",
+    "main.582a640d.css.map": "/Custom-Components/static/css/main.582a640d.css.map",
+    "main.9b7b81e0.js.map": "/Custom-Components/static/js/main.9b7b81e0.js.map"
   },
   "entrypoints": [
     "static/css/main.582a640d.css",
-    "static/js/main.3b1810bb.js"
+    "static/js/main.9b7b81e0.js"
   ]
 }
