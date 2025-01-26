@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Callum-Anderson0/Custom-Components/static/css/main.ca29b440.css",
+    "main.js": "/Callum-Anderson0/Custom-Components/static/js/main.3cbe575c.js",
+    "index.html": "/Callum-Anderson0/Custom-Components/index.html",
+    "main.ca29b440.css.map": "/Callum-Anderson0/Custom-Components/static/css/main.ca29b440.css.map",
+    "main.3cbe575c.js.map": "/Callum-Anderson0/Custom-Components/static/js/main.3cbe575c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ca29b440.css",
+    "static/js/main.3cbe575c.js"
+  ]
+}
